@@ -8,15 +8,15 @@
     <div class="rolling_bottom">
       <div class="rolling_mes rolling_mes_left">
         <img src="../img/detail.png">
-        <p><a href="#">了解详细</a></p>
+        <p><a href="#">了解详情</a></p>
       </div>
       <div class="rolling_mes">
         <img src="../img/certificate.png">
-        <p><a href="#">证书查询</a></p>
+        <p><router-link to="/certificate">证书查询</router-link> </p>
       </div>
       <div class="rolling_mes rolling_mes_right">
         <img src="../img/apply.png">
-        <p><a href="#">我要报名</a></p>
+        <p><a href="#applys">我要报名</a></p>
       </div>
     </div>
     <!--    热点新闻-->
@@ -30,12 +30,12 @@
             <img src="../img/government.png" class="btm_bor">
             <div>
               <div class="every_mes_title">
-                <a href="#">政务在线</a>
+                <a @click="$router.push('/newList/first')">政务在线</a>
                 <p class="right_arrow"></p>
                 <p class="right_arrow arrow_distance"></p>
               </div>
               <ul>
-                <li><a href="#">政务在线新闻政务在线新闻政务在线新务在政务在线新闻政务在线新闻政务在线新务在</a></li>
+                <li><a href="#"  @click="$router.push(`/newsDetail/132`)">政务在线新闻政务在线新闻政务在线新务在政务在线新闻政务在线新闻政务在线新务在</a></li>
                 <li><a href="#">政务在线新闻政务在线新闻政务在线新务在政务在线新闻政务在线新闻政务在线新务在</a></li>
                 <li><a href="#">政务在线新闻政务在线新闻政务在线新务在线新闻政务在线新务在</a></li>
               </ul>
@@ -45,7 +45,7 @@
             <img src="../img/university.png">
             <div>
               <div class="every_mes_title">
-                <a href="#">高校活动</a>
+                <a @click="$router.push('/newList/second')">高校活动</a>
                 <p class="right_arrow"></p>
                 <p class="right_arrow arrow_distance"></p>
               </div>
@@ -60,7 +60,7 @@
             <img src="../img/foreign.png">
             <div>
               <div class="every_mes_title">
-                <a href="#">出国留学</a>
+                <a @click="$router.push('/newList/third')">出国留学</a>
                 <p class="right_arrow"></p>
                 <p class="right_arrow arrow_distance"></p>
               </div>
@@ -76,110 +76,19 @@
     </div>
     <div class="examation">
       <div class="news_title">
-        <p style="background-color: #ffffff">资格报考</p>
+        <p style="background-color: #ffffff" id="applys">资格报考</p>
       </div>
       <div class="examation_list">
         <img src="../img/major.png">
         <p>职业考核</p>
       </div>
       <div class="examation_bg">
-        <a href="#">
+        <a v-for="item in professionList" @click="$router.push(`/apply/a`)">
           <div class="every_examation leftfloat"
-               :style="{background:'url('+require('../img/safeCheck.png')+')'}">
-            <p class="every_examation_title">安检</p>
+               :style="{background:'url('+item.imgUrl+')'}" @click=" ">
+            <p class="every_examation_title">{{item.title}}</p>
             <div class="every_examation_name">
-              <p>安检局特种工</p>
-              <div class="icons">
-                <p class="right_arrow"></p>
-                <p class="right_arrow arrow_distance"></p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="#">
-          <div class="every_examation leftfloat"
-               :style="{background:'url('+require('../img/checkQuality.png')+')'}">
-            <p class="every_examation_title">质检</p>
-            <div class="every_examation_name">
-              <p>质监局特种工</p>
-              <div class="icons">
-                <p class="right_arrow"></p>
-                <p class="right_arrow arrow_distance"></p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="#">
-          <div class="every_examation leftfloat"
-               :style="{background:'url('+require('../img/work.png')+')'}">
-            <p class="every_examation_title">轻工</p>
-            <div class="every_examation_name">
-              <p>轻工技能鉴定</p>
-              <div class="icons">
-                <p class="right_arrow"></p>
-                <p class="right_arrow arrow_distance"></p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="#">
-          <div class="every_examation leftfloat"
-               :style="{background:'url('+require('../img/house.png')+')'}">
-            <p class="every_examation_title">住建</p>
-            <div class="every_examation_name">
-              <p>住建部技能工</p>
-              <div class="icons">
-                <p class="right_arrow"></p>
-                <p class="right_arrow arrow_distance"></p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="#">
-          <div class="every_examation leftfloat"
-               :style="{background:'url('+require('../img/traffic.png')+')'}">
-            <p class="every_examation_title">交通</p>
-            <div class="every_examation_name">
-              <p>交通技能鉴定</p>
-              <div class="icons">
-                <p class="right_arrow"></p>
-                <p class="right_arrow arrow_distance"></p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="#">
-          <div class="every_examation leftfloat"
-               :style="{background:'url('+require('../img/ministry.png')+')'}">
-            <p class="every_examation_title">工信</p>
-            <div class="every_examation_name">
-              <p>工信技能鉴定</p>
-              <div class="icons">
-                <p class="right_arrow"></p>
-                <p class="right_arrow arrow_distance"></p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="#">
-          <div class="every_examation leftfloat"
-               :style="{background:'url('+require('../img/health.png')+')'}">
-            <p class="every_examation_title">卫生</p>
-            <div class="every_examation_name">
-              <p>卫生技能鉴定</p>
-              <div class="icons">
-                <p class="right_arrow"></p>
-                <p class="right_arrow arrow_distance"></p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="#">
-          <div class="every_examation leftfloat"
-               :style="{background:'url('+require('../img/farm.png')+')'}">
-            <p class="every_examation_title">农业</p>
-            <div class="every_examation_name">
-              <p>农业技能鉴定</p>
+              <p>{{item.name}}</p>
               <div class="icons">
                 <p class="right_arrow"></p>
                 <p class="right_arrow arrow_distance"></p>
@@ -194,47 +103,11 @@
         <p>教师资格</p>
       </div>
       <div class="examation_bg">
-        <a href="#">
+        <a v-for="item in teacherList">
           <div class="every_examation leftfloat"
-               :style="{background:'url('+require('../img/teacher1.png')+')'}">
+               :style="{background:'url('+item.imgUrl+')'}">
             <div class="every_examation_name">
-              <p>笔试考试</p>
-              <div class="icons">
-                <p class="right_arrow"></p>
-                <p class="right_arrow arrow_distance"></p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="#">
-          <div class="every_examation leftfloat"
-               :style="{background:'url('+require('../img/teacher2.png')+')'}">
-            <div class="every_examation_name">
-              <p>政策认定</p>
-              <div class="icons">
-                <p class="right_arrow"></p>
-                <p class="right_arrow arrow_distance"></p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="#">
-          <div class="every_examation leftfloat"
-               :style="{background:'url('+require('../img/teacher3.png')+')'}">
-            <div class="every_examation_name">
-              <p>招教考试</p>
-              <div class="icons">
-                <p class="right_arrow"></p>
-                <p class="right_arrow arrow_distance"></p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="#">
-          <div class="every_examation leftfloat"
-               :style="{background:'url('+require('../img/teacher4.png')+')'}">
-            <div class="every_examation_name">
-              <p>特岗教师</p>
+              <p>{{item.name}}</p>
               <div class="icons">
                 <p class="right_arrow"></p>
                 <p class="right_arrow arrow_distance"></p>
@@ -249,35 +122,11 @@
         <p>普通话</p>
       </div>
       <div class="examation_bg">
-        <a href="#">
+        <a v-for="item in talkList">
           <div class="every_examation leftfloat"
-               :style="{background:'url('+require('../img/mandarin1.png')+')'}">
+               :style="{background:'url('+item.imgUrl+')'}">
             <div class="every_examation_name">
-              <p>考试计划</p>
-              <div class="icons">
-                <p class="right_arrow"></p>
-                <p class="right_arrow arrow_distance"></p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="#">
-          <div class="every_examation leftfloat"
-               :style="{background:'url('+require('../img/mandarin2.png')+')'}">
-            <div class="every_examation_name">
-              <p>模拟试题</p>
-              <div class="icons">
-                <p class="right_arrow"></p>
-                <p class="right_arrow arrow_distance"></p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a href="#">
-          <div class="every_examation leftfloat"
-               :style="{background:'url('+require('../img/mandarin3.png')+')'}">
-            <div class="every_examation_name">
-              <p>集中考培</p>
+              <p>{{item.name}}</p>
               <div class="icons">
                 <p class="right_arrow"></p>
                 <p class="right_arrow arrow_distance"></p>
@@ -306,8 +155,29 @@
         name: "home",
         data() {
             return {
-                imgList:[require('../img/101.jpg'), require('../img/102.jpg'), require('../img/103.jpg'), require('../img/102.jpg')],
-                lefts:0
+                imgList: [require('../img/101.jpg'), require('../img/102.jpg'), require('../img/103.jpg'), require('../img/102.jpg')],
+                lefts: 0,
+                professionList:[
+                    { workId: '', title: '安检', name: '安监局特种工', imgUrl: require('../img/safeCheck.png') },
+                    { workId: '', title: '质检', name: '0', imgUrl: require('../img/checkQuality.png') },
+                    { workId: '', title: '住建', name: '住建部技能工', imgUrl: require('../img/house.png') },
+                    { workId: '', title: '轻工', name: '轻工技能鉴定', imgUrl: require('../img/work.png') },
+                    { workId: '', title: '交通', name: '交通技能鉴定', imgUrl: require('../img/traffic.png') },
+                    { workId: '', title: '工信', name: '工信技能鉴定', imgUrl: require('../img/ministry.png') },
+                    { workId: '', title: '卫生', name: '卫生技能鉴定', imgUrl: require('../img/health.png') },
+                    { workId: '', title: '农业', name: '农业技能鉴定', imgUrl: require('../img/farm.png') },
+                ],
+                teacherList:[
+                    { workId: '', name: '笔试考试', imgUrl: require('../img/teacher1.png') },
+                    { workId: '', name: '招教考试', imgUrl: require('../img/teacher3.png') },
+                    { workId: '', name: '特岗教师', imgUrl: require('../img/teacher4.png') },
+                    { workId: '', name: '政策认定', imgUrl: require('../img/teacher2.png') },
+                ],
+                talkList:[
+                    { workId: '', name: '考试计划', imgUrl: require('../img/mandarin1.png') },
+                    { workId: '', name: '模拟试题', imgUrl: require('../img/mandarin2.png') },
+                    { workId: '', name: '集中考培', imgUrl: require('../img/mandarin3.png') },
+                ]
             }
         },
         methods: {
@@ -339,7 +209,7 @@
                 clearTimeout(this.timeouts);
             },
         },
-        created(){
+        created() {
             this.bg()
         }
     }

@@ -25,6 +25,13 @@
   ol,ul{
     list-style: none;
   }
+  button{
+    outline: none;
+    border: none;
+  }
+  button:hover,a:hover{
+    cursor: pointer;
+  }
   /*左浮动*/
   .leftfloat{float: left;}
   /*右浮动*/
@@ -40,5 +47,5 @@
   .none{
     display: none;
   }
-  input,body,img{border: none;}
+  /*input,body,img{border: none;}*/
 </style>
